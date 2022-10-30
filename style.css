@@ -20,3 +20,23 @@ body {
 textarea {
     height: 200px!important;
 }
+
+.clients-list .client {
+    border-bottom: 1px solid #e1e1e1;
+    padding: 2rem;
+    padding-bottom: 3rem;
+    
+}
+.clients-list .client:last-of-type {
+    border-bottom: 0;
+}
+
+.clients-list .client p {
+    margin:0;
+}
+.clients-list .client a {
+    margin-top: 1rem!important;
+}
+.clients-list .client span {
+    font-weight: bold;
+}

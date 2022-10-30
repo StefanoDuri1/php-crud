@@ -13,14 +13,14 @@
         </div>
         <div class="col-md-6">
             <h3 class="mb-4">Your Clients</h3>
-            <ul class="list-group">
+            <ul class="clients-list">
                 <?php
 
                     $query = "SELECT * FROM clients";
                     $clientsData = mysqli_query($connection, $query);
 
                     while($row = mysqli_fetch_array($clientsData)) { ?>
-                        <div class"info p-3">
+                        <div class= "client p-3">
                             <h2 class="card-title fw-bolder"> <?php echo $row['client_name'];?> </h2>
                             <p>
                                 <span class="fw-bolder">Cellphone: </span>
