@@ -33,6 +33,12 @@
                                 <span class="fw-bolder">Description: </span>
                                 <?php echo $row['description']; ?>
                             </p>
+                            <a href="edit.php?id=<?php echo $row['id']; ?>" class="btn btn-secondary">
+                                <i class="fa-solid fa-marker"></i>
+                            </a>
+                            <a href="delete.php?id=<?php echo $row['id']; ?>" class="btn btn-danger">
+                                <i class="fa-solid fa-trash"></i>
+                            </a>
                         </div>
                 <?php } ?>
             </ul>
