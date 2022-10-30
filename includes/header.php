@@ -9,4 +9,4 @@
     <link rel="stylesheet" href="style.css">
     <title>Clients List</title>
 </head>
-<body>
+<body class='bg-primary'>
