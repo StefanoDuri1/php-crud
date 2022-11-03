@@ -10,7 +10,13 @@
 
     <div class='row'>
         <div class="col-md-6">
-            <?php include('form.php'); ?>
+            <form action="index.php" method="POST">
+                <h3 class="mb-4">Client Information</h3>
+                <?php addingClients(); ?>
+                <div class="form-group">
+                    <input type="submit" value="Create Client" name="submit" class="btn btn-outline-success w-100 d-block" />
+                </div>
+            </form>
         </div>
         <div class="col-md-6">
             <h3 class="mb-4">Your Clients</h3>

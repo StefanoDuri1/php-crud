@@ -1,5 +1,6 @@
 <?php
     include('db.php');
+    include('functions.php');
 
     if(isset($_GET['id'])) {
         $id = $_GET['id'];
@@ -39,58 +40,7 @@
             <form action="edit.php?id=<?php echo $_GET['id'];?>" method="POST">
                 <h3 class="mb-4">Edit here</h3>
 
-                <div class="form-group row my-3">
-                    <label class="col-sm-4 col-lg-4 col-form-label">Client Name:</label>
-                    <div class="col-sm-8 col-lg-8">
-                        <input 
-                            type="text" 
-                            name="client_name"
-                            class="form-control"
-                            placeholder="Update name"
-                            value="<?php echo $client_name;?>"
-                        >
-                    </div>
-                </div>
-
-                <div class="form-group row mb-3">
-                    <label class="col-sm-4 col-lg-4 col-form-label">Cellphone:</label>
-                    <div class="col-sm-8 col-lg-8">
-                        <input 
-                            type="tel" 
-                            name="cellphone" 
-                            class="form-control"  
-                            placeholder="Edit cellphone"
-                            value="<?php echo $cellphone;?>"
-                        >
-                    </div>
-                </div>
-
-                <div class="form-group row mb-3">
-                    <label class="col-sm-4 col-lg-4 col-form-label">Email:</label>
-                    <div class="col-sm-8 col-lg-8">
-                        <input 
-                            type="email" 
-                            name="email" 
-                            class="form-control" 
-                            placeholder="Edit email"
-                            value="<?php echo $email;?>"
-                        >
-                    </div>
-                </div>
-
-                <div class="form-group row mb-3">
-                    <label class="col-sm-4 col-lg-4 col-form-label">Description:</label>
-                    <div class="col-sm-8 col-lg-8">
-                        <textarea 
-                            type="text" 
-                            name="description" 
-                            class="form-control"
-                            rows="2"
-                            placeholder="Edit Client's Description"
-                        ><?php echo $description;?></textarea>
-                    </div>
-                </div>
-
+                <?php addingClients($_GET['id']); ?>
                 <div class="form-group">
                     <input type="submit" value="Edit Client" name="edit" class="btn btn-outline-success w-100 d-block" />
                 </div>
@@ -100,30 +50,11 @@
         <div class="col-md-6">
                 <h3 class="mb-4">Your Clients</h3>
                 <ul class="list-group">
-                    <?php
-
-                        $query = "SELECT * FROM clients";
-                        $clientsData = mysqli_query($connection, $query);
-
-                        while($row = mysqli_fetch_array($clientsData)) { ?>
-                            <div class"info p-3">
-                                <h2 class="card-title fw-bolder"> <?php echo $row['client_name'];?> </h2>
-                                <p>
-                                    <span class="fw-bolder">Cellphone: </span>
-                                    <?php echo $row['cellphone']; ?>
-                                </p>
-                                <p>
-                                    <span class="fw-bolder">Email: </span><?php echo $row['email']; ?>
-                                </p>
-                                <p>
-                                    <span class="fw-bolder">Description: </span>
-                                    <?php echo $row['description']; ?>
-                                </p>
-                            </div>
-                        <?php } ?>
+                    <?php yourClients(); ?>
                 </ul>
             </div>
     </div>
 </div>
+
 
 <?php include("includes/footer.php"); ?>
