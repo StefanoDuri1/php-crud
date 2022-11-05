@@ -1,10 +1,12 @@
 <?php
 
+    include('variables.php');
+
     $connection = mysqli_connect(
-        'localhost',
-        'root',
-        'root',
-        'php_crud'
-    );
+        $LOCALHOST,
+        $USER_NAME,
+        $PASS,
+        $DB_NAME
+);
 
 ?>
