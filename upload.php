@@ -12,7 +12,7 @@
 
         if(in_array($imageExt, $imageAllowed)) {
             $newImageName = uniqid('IMG-', true).'.'.$imageExtLc;
-            $imageUpload = "images/" . $newImageName;
+            $imageUpload = "uploads/" . $newImageName;
             move_uploaded_file($tmp_name, $imageUpload);
         }
     }

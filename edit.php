@@ -1,6 +1,7 @@
 <?php
     include('db.php');
     include('functions.php');
+    include('upload.php');
 
     if(isset($_GET['id'])) {
         $id = $_GET['id'];
@@ -13,6 +14,7 @@
             $cellphone = $row['cellphone'];
             $email = $row['email'];
             $description = $row['description'];
+            $image = $row['image'];
         }
     }
 
@@ -22,8 +24,9 @@
         $cellphone = $_POST['cellphone'];
         $email = $_POST['email'];
         $description = $_POST['description'];
+        $image = $newImageName;
 
-        $query = "UPDATE clients set client_name = '$client_name', cellphone = '$cellphone', email = '$email', description = '$description' WHERE id = $id";
+        $query = "UPDATE clients set client_name = '$client_name', cellphone = '$cellphone', email = '$email', description = '$description', image = '$newImageName' WHERE id = $id";
         mysqli_query($connection, $query);
         header('Location: index.php');
     }
@@ -37,7 +40,7 @@
 <div class="container bg-white mt-5 p-5">
     <div class='row'>
         <div class="col-md-6">
-            <form action="edit.php?id=<?php echo $_GET['id'];?>" method="POST">
+            <form action="edit.php?id=<?php echo $_GET['id'];?>" method="POST" enctype="multipart/form-data">
                 <h3 class="mb-4">Edit here</h3>
 
                 <?php addingClients($_GET['id']); ?>
