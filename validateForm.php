@@ -7,9 +7,10 @@
         $cellphone = $_POST['cellphone'];
         $email = $_POST['email'];
         $description = $_POST['description'];
+        include('upload.php');
 
-        if(!empty($client_name) && !empty($cellphone) && !empty($email) && !empty($description)) {
-            $query = "INSERT INTO clients(client_name, cellphone, email, description) VALUES('$client_name', '$cellphone', '$email', '$description')";
+        if(!empty($client_name) && !empty($cellphone) && !empty($email) && !empty($description) && !empty($newImageName)) {
+            $query = "INSERT INTO clients(client_name, cellphone, email, description, image) VALUES('$client_name', '$cellphone', '$email', '$description', '$newImageName')";
             $data = mysqli_query($connection, $query);
 
             if(!$data) {
@@ -28,6 +29,9 @@
             }
             if(empty($description)) {
                 $_SESSION['labels'][] = "Enter a description";
+            }
+            if(empty($newImageName)) {
+                $_SESSION['labels'][] = "Upload a valid Image";
             }
             }
         

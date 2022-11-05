@@ -8,7 +8,10 @@
 
         while($row = mysqli_fetch_array($clientsData)) { ?>
             <div class= "client p-3">
-                <h2 class="card-title fw-bolder"> <?php echo $row['client_name'];?> </h2>
+                <h2 class="card-title fw-bolder d-inline-block"> <?php echo $row['client_name'];?> </h2>
+                <picture class="d-inline-block">
+                    <img src="images/<?php echo $row['image'];?>" alt="profile-image" class="profile-img">
+                </picture>
                 <p>
                     <span class="fw-bolder">Cellphone: </span>
                     <?php echo $row['cellphone']; ?>

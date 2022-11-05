@@ -10,7 +10,7 @@
 
     <div class='row'>
         <div class="col-md-6">
-            <form action="index.php" method="POST">
+            <form action="index.php" method="POST" enctype="multipart/form-data">
                 <h3 class="mb-4">Client Information</h3>
                 <?php addingClients(); ?>
                 <div class="form-group">
