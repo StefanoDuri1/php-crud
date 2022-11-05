@@ -84,5 +84,16 @@
             </div>
         </div>
 
+        <div class="form-group row mb-3">
+            <label class="col-sm-4 col-lg-4 col-form-label">Profile Image:</label>
+            <div class="col-sm-8 col-lg-8">
+                <input 
+                    type="file" 
+                    name="image" 
+                    class="form-control" 
+                >
+            </div>
+        </div>
+
     <?php }
 ?>
